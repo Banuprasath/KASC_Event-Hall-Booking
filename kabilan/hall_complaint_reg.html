@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/a364e8076a.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/hall_complaint_reg.css">
+    <script src="js/hall_complaint_reg.js"></script>
+</head>
+
+<body>
+    <div>
+        <header class="header">
+            <h1><a href="#" class="blog">KASC</a></h1>
+            <i class="des-menu fa-solid fa-bars" style="color: #fff;" id="menu-icon"></i>
+        </header>
+        <div class="side-bar">
+            <nav>
+                <ul>
+                    <li><a href="http://www.kasc.ac.in/" class="logo" target="_self">
+                            <img src="https://www.naukrimessenger.com/wp-content/uploads/2021/08/kasc.jpg" alt="">
+                            <span class=" des nav-items">KASC</span>
+                        </a></li>
+                    <li><a href="#" target="_self">
+                            <i class="des fa-solid fa-house" style="color: #fff;"></i>
+                            <span class="nav-items">HOME</span>
+                        </a></li>
+                    <li><a href="personal.html" target="_self">
+                            <i class="des fa-solid fa-user" style="color: #fff;"></i>
+                            <span class="nav-items">PERSONAL</span>
+                        </a></li>
+                    <li><a href="hallbookingform.html" target="_self">
+                            <i class="des fa-solid fa-chalkboard" style="color: #fff;"></i>
+                            <span class="nav-items">HALL</span>
+                        </a></li>
+                    <li><a href="recentevent.html" target="_self">
+                            <i class="des fa-regular fa-calendar-check" style="color: #fff;"></i>
+                            <span class="nav-items">EVENTS</span>
+                        </a></li>
+                    <li><a href="hall_complaint_reg.html" target="_self">
+                            <i class="des fa-regular fa-file" style="color: #fff;"></i>
+                            <span class="nav-items">QUERY</span>
+                        </a></li>
+                    <li><a href="ComplaintTable.html" target="_self">
+                            <i class="des fa-solid fa-clipboard-question" style="color: #fff;"></i>
+                            <span class="nav-items">VIEW QUERIES</span>
+                        </a></li>
+                    <li><a href="#" class="logout">
+                            <i class="des fa-solid fa-arrow-right-from-bracket" style="color: #fff;"></i>
+                            <span class="nav-items">LOGOUT</span>
+                        </a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+
+        <div class="complaint">
+
+            <div>
+                <h1 class="complaint_form_heading">Complaint Registration</h1>
+            </div>
+
+            <div class="complaint_form">
+                <form name='myform' method='post' enctype='multipart/form-data' onsubmit="return validateForm()">
+                    <table>
+                        <tr>
+                            <td><label for='sname'>Staff Name:</label></td>
+                            <td><input type='text' name='sname' id='sname' autofocus></td>
+                        </tr>
+                        <tr>
+                            <td><label for='sregno'>Staff Reg.No:</label></td>
+                            <td><input type='tel' name='sregno' id='sregno' autofocus></td>
+                        </tr>
+                        <tr>
+                            <td><label for='cp'>Caption:</label></td>
+                            <td><input type='text' name='cp' id='cp'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='hall'>Select Hall:</label></td>
+                            <td>
+                                <select id='hall' name='hall'>
+                                    <option value=''></option>
+                                    <option value='UV'>U.V Hall</option>
+                                    <option value='RJ'>Ramanujam Hall</option>
+                                    <option value='PG'>PG Seminar Hall</option>
+                                    <option value='SJ'>Silver Jubilee Hall</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for='abt'>Details:</label></td>
+                            <td><textarea name='abt' id='abt'></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for='image'>Image Proof:</label></td>
+                            <td><input type='file' name='image' id='image'></td>
+                        </tr>
+                        <tr>
+                            <td><input type='reset' name='reset' value='Reset'></td>
+                            <td><input type='submit' name='submit' value='Submit'></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <!--<div>
+                <h1 class="complaint_form_heading">Recent-Complaints</h1>
+            </div>
+            <div class="complaint-view">
+                <form method='post'>
+                    <table>
+                        <tr>
+                            <td><input type='text' name='hall' placeholder='Hall'></td>
+                            <td><input type='text' name='cap' placeholder='dep'></td>
+                            <td><input type='submit' name='submit'></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="complaint_form">
+                <form name='myform' method='post' enctype='multipart/form-data'>
+                    <table>
+                        <tr>
+                            <td><label for='sname'>Staff Name:</label></td>
+                            <td><input type='text' name='sname' id='sname'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='sregno'>Staff Reg.No:</label></td>
+                            <td><input type='tel' name='sregno' id='sregno'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='cp'>Caption:</label></td>
+                            <td><input type='text' name='cp' id='cp'></td>
+                        </tr>
+                        <tr>
+                            <td><label for='hall'>Select Hall:</label></td>
+                            <td>
+                                <select id='hall' name='hall'>
+                                    <option value='UV'>U.V Hall</option>
+                                    <option value='RJ'>Ramanujam Hall</option>
+                                    <option value='PG'>PG Seminar Hall</option>
+                                    <option value='SJ'>Silver Jubilee Hall</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for='abt'>Details:</label></td>
+                            <td><textarea name='abt' id='abt'></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for='image'>Image Proof:</label></td>
+                            <td><input type='file' name='image' id='image' required></td>
+                        </tr>
+                        <tr>
+                            <td><input type='reset' name='reset' value='Reset'></td>
+                            <td><input type='submit' name='submit' value='Submit'></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>-->
+        </div>
+    </div>
+</body>
+
+</html>

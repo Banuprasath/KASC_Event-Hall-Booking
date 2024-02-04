@@ -1,0 +1,24 @@
+table {
+    padding: 15px;
+
+
+}
+
+td {
+    font-size: 24px;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}

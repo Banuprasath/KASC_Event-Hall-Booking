@@ -12,11 +12,8 @@
  
 
     <style>
-table, th, td {
-  border:1px solid;
-  border-collapse: collapse;
-  padding:5px;
-}
+
+
 </style>
 </body>
 
@@ -171,7 +168,7 @@ if($result1){
         // echo $count2;
         // echo $count3;
 
-         echo "This hall is already booked for the specified date and time. Please choose a different date or time.<br>";
+         echo "<script> alert('This hall is already booked for the specified date and time. Please choose a different date or time');</script>.<br>";
  
      }
 
@@ -179,7 +176,7 @@ if($result1){
         $sqlInsert = "INSERT INTO booking (etype,ename,about,dep,fname,hall,sdate,stime,etime) VALUES ('$etype','$ename','$abt','$dep','$fname','$hall','$edate','$stime','$etime')";
 
         if ($conn->query($sqlInsert) === TRUE) {
-            echo "Record inserted successfully<br>";
+            echo "<script> alert('Record inserted successfully<br>";
                 } else {
                     echo "Error inserting record: " . $conn->error . "<br>";
                 }
@@ -190,7 +187,8 @@ if($result1){
         $sqlInsert = "INSERT INTO booking (etype,ename,about,dep,fname,hall,sdate,stime,etime) VALUES ('$etype','$ename','$abt','$dep','$fname','$hall','$edate','$stime','$etime')";
 
         if ($conn->query($sqlInsert) === TRUE) {
-            echo "Record inserted successfully<br>";
+            echo "<script> alert('Record inserted successfully<br>";
+            header('Location: view.php');
                 } else {
                     echo "Error inserting record: " . $conn->error . "<br>";
                 }
@@ -199,46 +197,6 @@ if($result1){
 }
 $conn->close();
 
-
-
-
-//     $sqlCheckDuplicate = "SELECT COUNT(*) as count FROM booking  WHERE hall = '$hall'  AND sdate = '$edate' AND stime >= '$stime' AND etime >= '$etime'";
-//     $result1 = $conn->query($sqlCheckDuplicate);
-
-
-
-//     $sqlCheckDuplicate2 = "SELECT COUNT(*) as count FROM booking  WHERE hall = '$hall'  AND sdate = '$edate' AND stime <= '$stime' AND etime <= '$etime'";
-//     $result2 = $conn->query($sqlCheckDuplicate2);
-
-//     $sqlCheckDuplicate3 = "SELECT COUNT(*) as count FROM booking  WHERE hall = '$hall'  AND sdate = '$edate' AND stime >= '$stime' AND etime <= '$etime'";
-//     $result3 = $conn->query($sqlCheckDuplicate3);
-
-//     $sqlCheckDuplicate4 = "SELECT COUNT(*) as count FROM booking  WHERE hall = '$hall'  AND sdate = '$edate' AND stime <= '$stime' AND etime >= '$etime'";
-//     $result4 = $conn->query($sqlCheckDuplicate4);
-
-// if($result1 || $result2 || $result3 || $result4){
-//     $row = $result1->fetch_assoc();
-//      $count1 = $row['count'];
-
-//      $row2 = $result2->fetch_assoc();
-//      $count2 = $row2['count'];
-
-
-//      $row3 = $result3->fetch_assoc();
-//      $count3 = $row3['count'];
-
-//      $row4  = $result4->fetch_assoc();
-//      $count4 = $row4['count'];
-//      //echo $count;
-//      if ($count1  > 0 || $count2 > 0 || $count3 > 0 || $count4 >0) {
-
-//          // Duplicate entry
-//          echo $count1;
-//          echo $count2;
-//          echo $count3;
-//          echo $count4;
-//          echo "This hall is already booked for the specified date and time. Please choose a different date or time.<br>";
-//      }
 
 ?>
 

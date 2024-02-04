@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font-family: 'Poppins', Sans-Serif;
+}
+
+body {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("https://w.wallhaven.cc/full/mp/wallhaven-mprkjk.jpg") no-repeat no-repeat fixed;
+}
+
+.header {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.des-menu {
+    margin-left: 2.5rem;
+}
+
+.blog {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.des-menu {
+    font-size: 25px;
+    display: block;
+}
+
+/* The css for side bar starts here */
+
+
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    background: transparent;
+    width: 90px;
+    overflow: hidden;
+    transition: width 0.4s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border-right: 2px solid #fff;
+    border-radius: 0 20px 20px 0;
+}
+
+nav:hover {
+    width: 250px;
+    transition: all 0.5s ease;
+    border-right: 2px solid #fff;
+    border-radius: 0 33px 33px 0;
+}
+
+nav::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(225, 225, 225, .2), transparent);
+    transition: .2s;
+}
+
+nav:hover::before {
+    top: 100%;
+}
+
+.logo {
+    text-align: center;
+    display: flex;
+    transform: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+
+.logo img {
+    align-self: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    display: table;
+    width: 250px;
+    padding: 10px;
+    transition: 1s;
+}
+
+.des {
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+.nav-items {
+    position: relative;
+    top: 12px;
+    margin: 10px;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+    background: aqua;
+    color: #000;
+}
+
+span:hover {
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+
+.logout {
+    position: absolute;
+    bottom: 20px;
+}
+
+/* The css for side bar ends here */
+
+/*body {
+    background: url("https://w.wallhaven.cc/full/85/wallhaven-8586my.png") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}*/
+
+
+/*css fo personal info details starts here*/
+.personal_heading {
+    text-align: left;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.staff_details {
+    margin-top: 20px;
+}
+
+table {
+    width: 600px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+thead {
+    background-color: #4caf50;
+    color: #fff;
+    text-align: left;
+}
+
+.heading_tr td {
+    padding: 30px 0 30px 20px;
+    font-size: 1.8rem;
+}
+
+.heading_tr i {
+    cursor: pointer;
+    text-decoration: none;
+    color: blue;
+}
+
+.td_content td {
+    font-size: .9rem;
+    flex-basis: 50%;
+}
+
+.tr-td-head {
+    text-align: right;
+}
+
+.td_content td:nth-child(2) {
+    text-align: right;
+}
+
+.td_cont td:nth-child(2) {
+    text-align: right;
+    position: relative;
+    top: -.7rem;
+}
+
+/*.heading_tr td:nth-child(2) {
+    text-align: right;
+}*/
+td {
+    padding: 10px 10px 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+img {
+    width: 100px;
+    /* Adjust the size as needed */
+    border-radius: 50%;
+}
+
+.td_content:hover td {
+    transition: .5s;
+    background: #0004;
+}
+
+/* The css for complaint container ends here */
+@media only screen and (max-width: 935px) {
+    .side-bar {
+        display: none;
+    }
+
+    .side-bar.active {
+        display: flex;
+        width: 250px;
+    }
+
+    .header {
+        display: flex;
+        border-bottom: 1px solid #fff4;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .personal_info {
+        margin-top: 6.5rem;
+        margin-bottom: 5.5rem;
+        /*border: 1px solid #fff;*/
+        overflow: auto;
+    }
+
+    table {
+        width: 550px;
+        border: none;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    /*body {
+        background: url("https://w.wallhaven.cc/full/85/wallhaven-8586my.png");
+    }*/
+
+    .side-bar {
+        display: none;
+    }
+
+    .side-bar.active {
+        display: flex;
+        width: 250px;
+    }
+
+    .personal_info {
+        margin-top: 5.5rem;
+        margin-left: 15px;
+        margin-bottom: 5.5rem;
+        width: 100%;
+        /*border: 1px solid #fff;*/
+        padding: 20px;
+        overflow: auto;
+    }
+
+    .td-value:hover {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .header {
+        display: flex;
+    }
+
+    table {
+        width: 450px;
+        border: none;
+    }
+
+    .des-menu {
+        margin-left: 1.5rem;
+    }
+
+    .blog {
+        font-size: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        pointer-events: none;
+    }
+
+    .personal_heading {
+        font-size: 2rem;
+        pointer-events: none;
+        font-weight: 500;
+    }
+
+}
+
+@media only screen and (max-width: 485px) {
+    .side-bar {
+        display: none;
+    }
+
+    .side-bar.active {
+        display: flex;
+        width: 250px;
+    }
+
+    .personal_info {
+        margin-top: 6.5rem;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 5.5rem;
+        width: 420px;
+        /*border: 1px solid #fff;*/
+        padding: 20px;
+        overflow: auto;
+    }
+
+    table {
+        width: 100%;
+        border: none;
+    }
+
+}
+
+@media only screen and (max-width: 380px) {
+    .side-bar {
+        display: none;
+    }
+
+    .side-bar.active {
+        display: flex;
+        width: 250px;
+    }
+
+    .personal_info {
+        margin-top: 5.5rem;
+        margin-left: 1px;
+        margin-right: 15px;
+        margin-bottom: 5.5rem;
+        width: 350px;
+        /*border: 1px solid #fff;*/
+        padding: 20px;
+        overflow: auto;
+    }
+
+    .td_content td {
+        font-size: .8rem;
+    }
+
+    .td_content td:nth-child(1) {
+        padding-left: -20px;
+    }
+
+}

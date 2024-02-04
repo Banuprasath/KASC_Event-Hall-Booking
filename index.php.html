@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a364e8076a.js" crossorigin="anonymous"></script>
+    <title>Index Page</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins'Sans-Serif;
+    text-decoration: none;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://w.wallhaven.cc/full/mp/wallhaven-mprkjk.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+
+}
+
+.navbar {
+    height: 14%;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo {
+    margin-top: 30px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.des {
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    left: 0;
+
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+
+}
+
+nav ul li {
+    font-size: 12px;
+
+}
+
+.row {
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+
+.col {
+    flex-basis: 50%;
+
+}
+
+h1 {
+    font-size: 100px;
+    color: #fff;
+}
+
+p {
+    font-size: 15px;
+    line-height: 15px;
+    color: #fff;
+}
+
+button {
+    width: 180px;
+    color: #000;
+    background-color: #fff;
+    padding: 12px 0;
+    font-size: 12px;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: aqua;
+}
+
+button span:hover {
+    color: #000;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+h5 {
+    color: #fff;
+    text-shadow: 0 0 5px #999;
+}
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 15px 25px;
+    margin: 10px 15px;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.card1 {
+    background-image: url("https://w.wallhaven.cc/full/jx/wallhaven-jxwzxy.jpg");
+}
+
+.card2 {
+    background-image: url("https://w.wallhaven.cc/full/q6/wallhaven-q6pd1q.jpg");
+}
+
+.card3 {
+    background-image: url("https://w.wallhaven.cc/full/2e/wallhaven-2emkr9.jpg");
+}
+
+.card4 {
+    background-image: url("https://w.wallhaven.cc/full/5w/wallhaven-5w6vz9.jpg");
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card p {
+    text-shadow: 0 0 15px #999;
+    font-size: .5rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .main-container {
+        padding-left: 5%;
+        padding-right: 5%;
+        background-attachment: fixed;
+        overflow: auto;
+    }
+
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .des {
+        margin-left: 0;
+    }
+
+    nav {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        flex-basis: 100%;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 100px;
+        height: 110px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .main-container {
+        padding-left: 3%;
+        padding-right: 3%;
+        background-attachment: fixed;
+        overflow: auto;
+    }
+
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .des {
+        margin-left: 0;
+    }
+
+    nav {
+        text-align: left;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        flex-basis: 100%;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 610px) and (min-width: 390px) {
+    .main-container {
+        padding-left: 5%;
+        padding-right: 5%;
+        background-attachment: fixed;
+        overflow: auto;
+    }
+
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .des {
+        margin-left: 0;
+    }
+
+    nav {
+        text-align: left;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        flex-basis: 100%;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 1110px) and (min-width: 770px) {
+    .main-container {
+        padding-left: 5%;
+        padding-right: 5%;
+        background-attachment: fixed;
+        overflow: auto;
+    }
+
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .des {
+        left: 0;
+    }
+
+    nav {
+        text-align: left;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        flex-basis: 100%;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="navbar">
+            <!-- navbar container-->
+            <img src="https://www.naukrimessenger.com/wp-content/uploads/2021/08/kasc.jpg" class="logo">
+            <nav class="">
+
+            </nav>
+            <!--<i class="des fa-regular fa-circle-user" style="color: #fff;" id="menu-icon" ></i>-->
+        </div>
+        <div class="row">
+            <div class="col">
+                <!-- text-container -->
+                <h1>KASC</h1>
+                <p>Kongu Arts and Science College is a leading co-educational and Autonomous Institution in Erode, offering a variety of programmes in Arts and Science stream.</p>
+                <div>
+                    <button><span>Explore</span></button>
+                    <button><span>Login</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <!-- Image container-->
+                <div class="card card1">
+                    <h5>U-V hall</h5>
+                    <p>it is located in bca block</p>
+                </div>
+                <div class="card card2">
+                    <h5>U-V hall</h5>
+                    <p>it is located in bca block</p>
+                </div>
+                <div class="card card3">
+                    <h5>U-V hall</h5>
+                    <p>it is located in bca block</p>
+                </div>
+                <div class="card card4">
+                    <h5>U-V hall</h5>
+                    <p>it is located in bca block</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
