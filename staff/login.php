@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login1.css">
 </head>
 <style>
     body {
@@ -16,17 +16,12 @@
     
         
         background-size: cover;
-        /* Adjust how the image is displayed */
         background-repeat: no-repeat;
-        /* Prevent image from repeating */
         display: flex;
         justify-content: center;
         align-items: center;
-        /* Center the content horizontally and vertically */
         min-height: 100vh;
-        /* Ensure the content takes up the full viewport height */
         margin: 0;
-        /* Remove default margin */
     }
 
     .container {
@@ -51,6 +46,9 @@
 
 
             <button type="submit" name="submit">Login</button>
+            <br>
+            <br>
+          <p>New user click to   <a href="register.php">Register Here</a></p>
         </form>
         
     </div>
@@ -157,17 +155,23 @@ if(isset($_POST['submit'])){
     {
         while($row=$query_run->fetch_assoc()){
             $sno= $row['sno'];
+            $sid=$row['sid'];
+            $sname=$row['sname'];
 
         }
        // header('Location: sadmin.php');
 
        echo $sno;
         $_SESSION['login']="verified";
+        $_SESSION['sname']=$sname;
         $_SESSION['sno']=$sno;
+        $_SESSION['sid']=$sid;
+        header('Location: sadmin.php');
     }
     
 
 
+    
 
 
 
@@ -181,7 +185,6 @@ if(isset($_POST['submit'])){
     else{
         echo '<script>alert("Invalid username and password");</script>';
     }
-    header('Location: sadmin.php');
 }
 
 

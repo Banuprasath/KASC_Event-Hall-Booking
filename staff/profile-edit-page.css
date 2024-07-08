@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font-family: 'Poppins', Sans-Serif;
+}
+
+body {
+    height: 100%;
+    background-image: url('https://i.ibb.co/qCkd9jS/img1.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: auto;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    /* background: url("test.jpeg") no-repeat no-repeat fixed; */
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+
+form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/*label {
+    font-weight: bold;
+    color: #c7c7c7;
+}*/
+
+input[type="text"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    /* Invert the color of the icon */
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    /* Invert the color of the icon */
+}
+
+/*input[type="time"] {
+    color: red; Change the text color
+  }*/
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+select option {
+    background-color: transparent;
+    /* Change this to your desired background-color: ; color */
+    color: #000;
+    font-weight: bold;
+    /* Change this to your desired text color */
+}
+
+input[type="reset"],
+input[type="submit"] {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    background-color: #0004;
+}
+
+.complaint {
+    margin-top: 45px;
+    position: relative;
+    border: none;
+    margin-bottom: 40px;
+}
+
+.complaint_form_heading {
+    text-align: center;
+    /*margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 25px;*/
+    margin: 10px 0 30px 25px;
+    color: #fff;
+}
+
+.des {
+    
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+button{
+    background-color:transparent;
+    border: 1px solid #fff7;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /*body {
+        background: url("https://w.wallhaven.cc/full/85/wallhaven-8586my.png");
+    }*/
+    .complaint {
+        margin-top: 2.5rem;
+        width: 550px;
+        /*border: 1px solid #fff;*/
+        padding: 20px;
+        overflow: auto;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .complaint_form_heading {
+        font-size: 1.5rem;
+        pointer-events: none;
+        font-weight: 500;
+    }
+
+    label {
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .complaint {
+        width: 100%;
+        padding: 20px;
+        overflow: auto;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .complaint_form_heading {
+        font-size: 1.5rem;
+        pointer-events: none;
+        font-weight: 500;
+    }
+
+    label {
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .complaint_form_heading {
+        width: 100%;
+        padding: 20px;
+        overflow: auto;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
+}

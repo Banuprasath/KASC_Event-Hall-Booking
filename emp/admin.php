@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if(isset($_SESSION['val'])){
 $servername = "localhost";
 $username = "root";
@@ -25,7 +26,7 @@ function convertTo12HourFormat($inputTime) {
 }
 
 ?>
-<link rel='stylesheet' href='admin.css'>
+
     <form name='myform' method='GET'>
 
  

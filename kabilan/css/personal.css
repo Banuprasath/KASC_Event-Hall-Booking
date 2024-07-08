@@ -12,12 +12,17 @@
 
 body {
     height: 100%;
+    background-image: url('https://i.ibb.co/qCkd9jS/img1.jpg');
     background-size: cover;
     background-position: center;
+    overflow: auto;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("https://w.wallhaven.cc/full/mp/wallhaven-mprkjk.jpg") no-repeat no-repeat fixed;
+    background-attachment: fixed;
+    /* background: url("test.jpeg") no-repeat no-repeat fixed; */
 }
 
 .header {
@@ -163,19 +168,7 @@ span:hover {
     bottom: 20px;
 }
 
-/* The css for side bar ends here */
 
-/*body {
-    background: url("https://w.wallhaven.cc/full/85/wallhaven-8586my.png") center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}*/
-
-
-/*css fo personal info details starts here*/
 .personal_heading {
     text-align: left;
     color: #fff;
@@ -194,6 +187,7 @@ table {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: #fff;
+    backdrop-filter: blur(10px);
 }
 
 thead {

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    text-decoration: none;
+}
+
+body {
+    margin-top: 10%;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://i.ibb.co/qCkd9jS/img1.jpg');
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+}
+
+.heading {
+    text-align: center;
+    color: #fff;
+}
+
+.main-container {
+    margin: 20px;
+}
+
+.row {
+    margin: 25px 5px 5px 5px;
+    padding: 10px;
+    display: flex;
+}
+
+.col {
+    border: 1px solid rgba(225, 225, 225, 0.8);
+    backdrop-filter: blur(25px);
+    border-radius: 15px;
+
+    padding: 10px;
+    margin: 10px;
+}
+
+table {
+    color: #fff;
+    width: 100%;
+    border-collapse: separate;
+}
+
+table td,
+table th {
+    width: 50%;
+    border: 1px solid #fff4;
+    padding: 8px;
+    text-align: left;
+}
+
+table tr td:nth-child(2) {
+    text-align: right;
+    color: #fff9;
+}
+
+button {
+    width: 180px;
+    color: #fff;
+    background-color: #0004;
+    padding: 12px 0;
+    font-size: 12px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button1 {
+    text-align: center
+}
+
+button:hover {
+    background-color: #fff3;
+}
+
+button span:hover {
+    color: #fff;
+    font-weight: bold;
+}

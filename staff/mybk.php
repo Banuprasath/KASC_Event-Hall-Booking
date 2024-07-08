@@ -59,7 +59,7 @@ echo "<tr>";
 echo "<th>even type</th>";
 echo "<th>event name</th>";
 echo "<th>About</th>";
-echo "<th>Dep</th>";
+echo "<th colspan='2'>Dep</th>";
 //echo "<th>Faculty Name</th>";
 echo "<th>Hall</th>";
 echo "<th>Date</th>";
@@ -79,7 +79,7 @@ if($result->num_rows>0){
                             echo "<td>".$row['etype']."</td>";
                             echo "<td>".$row['ename']."</td>";
                             echo "<td>".$row['about']."</td>";
-                            echo "<td>".$row['dep']."</td>";
+                            echo "<td  colspan='2' >".$row['dep']."</td>";
                            // echo "<td>".$row['fname']."</td>";
                             echo "<td>".$row['hall']."</td>";
                             echo "<td>".$row['sdate']."</td>";
@@ -116,7 +116,7 @@ if(isset($_GET['submit']))
 
                         echo "<td>".$row['etype']."</td>";
                         echo "<td>".$row['ename']."</td>";
-                        echo "<td>".$row['about']."</td>";
+                        echo "<td  colspan='2' >".$row['about']."</td>";
                         echo "<td>".$row['dep']."</td>";
                       //  echo "<td>".$row['fname']."</td>";
                         echo "<td>".$row['hall']."</td>";

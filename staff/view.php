@@ -2,6 +2,7 @@
 <?php
 session_start();
 if(isset($_SESSION['login'])){
+    $sno=$_SESSION['sno'];
     include 'conn.php';
 
 function convertTo12HourFormat($inputTime) {
@@ -33,6 +34,7 @@ function convertTo12HourFormat($inputTime) {
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <script src="../kabilan/js/recentevent.js"></script>
+    <title>STAFF BOOKINGS</title>
 
 </head>
 
@@ -40,48 +42,53 @@ function convertTo12HourFormat($inputTime) {
     <div>
         <div class="nav-bars">
             <header class="header">
-                <h1><a href="#" class="blog" target="_self">KASC</a></h1>
+                <h1><a href="logout.php" class="blog" target="_self">KASC</a></h1>
                 <i class="des-menu fa-solid fa-bars" style="color: #fff;" id="menu-icon"></i>
             </header>
             <div class="side-bar">
-                <nav>
-                    <ul>
-                        <li><a href="http://www.kasc.ac.in/" class="logo" target="_self">
-                                <img src="https://www.naukrimessenger.com/wp-content/uploads/2021/08/kasc.jpg" alt="">
-                                <span class=" des nav-items">KASC</span>
-                            </a></li>
-                        <li><a href="#" target="_self">
-                                <i class="des fa-solid fa-house" style="color: #fff;"></i>
-                                <span class="nav-items">HOME</span>
-                            </a></li>
-                        <li><a href="personal.html" target="_self">
-                                <i class="des fa-solid fa-user" style="color: #fff;"></i>
-                                <span class="nav-items">PERSONAL</span>
-                            </a></li>
-                        <li><a href="hallbookingform.html" target="_self">
-                                <i class="des fa-solid fa-chalkboard" style="color: #fff;"></i>
-                                <span class="nav-items">HALL</span>
-                            </a></li>
-                        <li><a href="recentevent.html" target="_self">
-                                <i class="des fa-regular fa-calendar-check" style="color: #fff;"></i>
-                                <span class="nav-items">EVENTS</span>
-                            </a></li>
-                        <li><a href="hall_complaint_reg.html" target="_self">
-                                <i class="des fa-regular fa-file" style="color: #fff;"></i>
-                                <span class="nav-items">QUERY</span>
-                            </a></li>
-                        <li><a href="ComplaintTable.html" target="_self">
-                                <i class="des fa-solid fa-clipboard-question" style="color: #fff;"></i>
-                                <span class="nav-items">VIEW QUERIES</span>
-                            </a></li>
-                        <li><a href="#" class="logout" target="_self">
-                                <i class="des fa-solid fa-arrow-right-from-bracket" style="color: #fff;"></i>
-                                <span class="nav-items">LOGOUT</span>
-                            </a></li>
-                    </ul>
-                </nav>
+            <nav>
+                <ul>
+                    <li><a href="http://www.kasc.ac.in/" class="logo" target="_self">
+                            <img src="https://www.naukrimessenger.com/wp-content/uploads/2021/08/kasc.jpg" alt="">
+                            <span class=" des nav-items">KASC</span>
+                        </a></li>
+                    <!-- <li><a href="#" target="_self">
+                            <i class="des fa-solid fa-house" style="color: #fff;"></i>
+                            <span class="nav-items">HOME</span>
+                        </a></li> -->
+                    <li><a href="personal.html" target="_self">
+                            <i class="des fa-solid fa-user" style="color: #fff;"></i>
+                            <span class="nav-items">PERSONAL</span>
+                        </a></li>
+                    <li><a href="sadmin.php" target="_self">
+                            <i class="des fa-solid fa-chalkboard" style="color: #fff;"></i>
+                            <!--fa-beat-fade-->
+                            <span class="nav-items">BOOK HALL</span>
+                        </a></li>
+                    <li><a href="view.php" target="_self">
+                            <i class="des fa-regular fa-calendar-check " style="color: #fff;"></i>
+                            <!--fa-beat-fade-->
+                            <span class="nav-items">MY BOOKINGS</span>
+                        </a></li>
+                    <li><a href="complaint-form.php" target="_self">
+                            <i class="des fa-regular fa-file" style="color: #fff;"></i>
+                            <!--fa-beat-fade-->
+                            <span class="nav-items">RISE QUERIES</span>
+                        </a></li>
+                    <li><a href="complaint.php" target="_self">
+                            <i class="des fa-solid fa-clipboard-question" style="color: #fff;"></i>
+                            <!--fa-beat-fade-->
+                            <span class="nav-items">MY QUERIES</span>
+                        </a></li>
+                    <li><a href="logout.php" class="logout" target="_self">
+                            <i class="des fa-solid fa-arrow-right-from-bracket" style="color: #fff;"></i>
+                            <!--fa-beat-fade-->
+                            <span class="nav-items">LOGOUT</span>
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
 
-            </div>
         </div>
 
 
@@ -110,7 +117,7 @@ function convertTo12HourFormat($inputTime) {
                             <th>Event Type</th>
                             <th>Event Name</th>
                             <th>About</th>
-                            <th>Dept</th>
+                            <th  colspan='2'>Dept</th>
                             <th>Hall</th>
                             <th>Date</th>
                             <th>Time</th>
@@ -119,7 +126,7 @@ function convertTo12HourFormat($inputTime) {
      <?php                  
 if(!isset($_GET['submit']))
 {
-    $sql="select * from booking order by sdate DESC";
+    $sql="select * from booking where sno = '$sno' order by sdate DESC";
 $result=$conn->query($sql);
 if($result->num_rows>0){
     while($row=$result->fetch_assoc()){
@@ -129,7 +136,7 @@ if($result->num_rows>0){
                             echo "<td>".$row['etype']."</td>";
                             echo "<td>".$row['ename']."</td>";
                             echo "<td>".$row['about']."</td>";
-                            echo "<td>".$row['dep']."</td>";
+                            echo "<td  colspan='2'>".$row['dep']."</td>";
                            // echo "<td>".$row['fname']."</td>";
                             echo "<td>".$row['hall']."</td>";
                             echo "<td>".$row['sdate']."</td>";
@@ -139,7 +146,7 @@ if($result->num_rows>0){
                             $etime12= convertTo12HourFormat($inputTime2);
                             echo "<td>".$stime12." - ".$etime12."</td>";
                             echo " <td><button class='edit'>Edit</button></td>";
-                            echo "   <td><button class='delete'><a href='delete.php' target='_blank'>Delete</a></button></td>";
+                            echo "   <td><button class='delete'><a href='bookingdelete.php?id=$id'>Delete</a></button></td>";
                            
                           //  echo "<td>".$etime12."</td>";
 
@@ -157,7 +164,7 @@ if(isset($_GET['submit']))
     $hall = $_GET['hall'];
    // echo $hall;
     $dep = $_GET['dep'];
-    $sql = "SELECT * FROM booking WHERE  hall  LIKE '%$hall%' AND dep LIKE '%$dep%' ";
+    $sql = "SELECT * FROM booking WHERE  sno ='$sno' AND hall  LIKE '%$hall%' AND dep LIKE '%$dep%' ";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -169,7 +176,7 @@ if(isset($_GET['submit']))
                         echo "<td>".$row['etype']."</td>";
                         echo "<td>".$row['ename']."</td>";
                         echo "<td>".$row['about']."</td>";
-                        echo "<td>".$row['dep']."</td>";
+                        echo "<td  colspan='2' >".$row['dep']."</td>";
                       //  echo "<td>".$row['fname']."</td>";
                         echo "<td>".$row['hall']."</td>";
                         echo "<td>".$row['sdate']."</td>";
@@ -179,7 +186,7 @@ if(isset($_GET['submit']))
                         $etime12= convertTo12HourFormat($inputTime2);
                         echo "<td>".$stime12." - ".$etime12."</td>";
                         echo " <td><button class='edit'>Edit</button></td>";
-                         echo "   <td><button class='delete'><a href='delete.php' target='_blank'>Delete</a></button></td>";
+                         echo "   <td><button class='delete'><a href='bookingdelete.php' target='_blank'>Delete</a></button></td>";
                         
                         }
        }

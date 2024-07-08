@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(isset($_SESSION['login'])){
+if(isset($_SESSION['login'] ) and isset($_SESSION['sname']) ){
    
-
+    $sname=$_SESSION['sname'];
     $sno=$_SESSION['sno'];
-    echo $_SESSION['login'];
+    //echo $_SESSION['login'];
     //echo $_SESSION['sno'];
 ?>
 
@@ -23,7 +23,8 @@ if(isset($_SESSION['login'])){
     <script src="https://kit.fontawesome.com/a364e8076a.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="../kabilan/css/hallbookingform.css">
-    <script src="../kabilan/js/hallbookingform.js"></script>
+    <script src="sadmin.js"></script>
+    <title>STAFF HALL BOOKING</title>
 </head>
 
 <body>
@@ -40,12 +41,11 @@ if(isset($_SESSION['login'])){
                             <img src="https://www.naukrimessenger.com/wp-content/uploads/2021/08/kasc.jpg" alt="">
                             <span class=" des nav-items">KASC</span>
                         </a></li>
-                    <li><a href="#" target="_self">
+                    <!-- <li><a href="#" target="_self">
                             <i class="des fa-solid fa-house" style="color: #fff;"></i>
-                            <!--fa-beat-fade-->
                             <span class="nav-items">HOME</span>
-                        </a></li>
-                    <li><a href="personal.html" target="_self">
+                        </a></li> -->
+                    <li><a href="spersonal.php" target="_self">
                             <i class="des fa-solid fa-user" style="color: #fff;"></i>
                             <span class="nav-items">PERSONAL</span>
                         </a></li>
@@ -54,22 +54,22 @@ if(isset($_SESSION['login'])){
                             <!--fa-beat-fade-->
                             <span class="nav-items">BOOK HALL</span>
                         </a></li>
-                    <li><a href="recentevent.html" target="_self">
+                    <li><a href="view.php" target="_self">
                             <i class="des fa-regular fa-calendar-check " style="color: #fff;"></i>
                             <!--fa-beat-fade-->
-                            <span class="nav-items">EVENTS</span>
+                            <span class="nav-items">MY BOOKINGS</span>
                         </a></li>
-                    <li><a href="hall_complaint_reg.html" target="_self">
+                    <li><a href="complaint-form.php" target="_self">
                             <i class="des fa-regular fa-file" style="color: #fff;"></i>
                             <!--fa-beat-fade-->
-                            <span class="nav-items">QUERY</span>
+                            <span class="nav-items">RISE QUERIES</span>
                         </a></li>
-                    <li><a href="ComplaintTable.html" target="_self">
+                    <li><a href="complaint.php" target="_self">
                             <i class="des fa-solid fa-clipboard-question" style="color: #fff;"></i>
                             <!--fa-beat-fade-->
-                            <span class="nav-items">VIEW QUERIES</span>
+                            <span class="nav-items">MY QUERIES</span>
                         </a></li>
-                    <li><a href="#" class="logout" target="_self">
+                    <li><a href="logout.php" class="logout" target="_self">
                             <i class="des fa-solid fa-arrow-right-from-bracket" style="color: #fff;"></i>
                             <!--fa-beat-fade-->
                             <span class="nav-items">LOGOUT</span>
@@ -89,7 +89,7 @@ if(isset($_SESSION['login'])){
                         <tr>
                             <td><label for="dep">Department</label></td>
                             <td>
-                                <select id="dep" name="dep">
+                            <select id="dep" name="dep" onblur="validateDepartment()">
                                     <option value=''></option>
                                     <option value="Tamil">Tamil</option>
                                     <option value="English">English</option>
@@ -121,48 +121,69 @@ if(isset($_SESSION['login'])){
                                     <option value="Physical Education">Physical Education</option>
                                     <option value="Supporting Staff">Supporting Staff</option>
                                 </select>
+                                <span id="depError" style="color: red;"></span><br>
                             </td>
                         </tr>
                         <tr>
                             <td><label for='etype'>Event Type</label></td>
-                            <td><input type='text' name='etype' id="etype"></td>
+                            <td>
+                                <input type="text" id="etype" name="etype" onblur="validateEventType()">
+                                <span id="etypeError" style="color: red;"></span><br>
+                            </td>
+                            
                         </tr>
                         <tr>
                             <td><label for='ename'>Event Name</label></td>
-                            <td><input type='text' name='ename' id="ename"></td>
+                            <td>
+                                <input type="text" id="ename" name="ename" onblur="validateEventName()">
+                                <span id="enameError" style="color: red;"></span><br>
+                            </td>
                         </tr>
                         <tr>
                             <td><label for='event'>About Event</label></td>
-                            <td><textarea type='text' name='event' id="event"></textarea></td>
+                            <td>
+                                <textarea type='text' id='event' name='event' onblur="validateEventDescription()"></textarea>
+                                <span id="eventError" style="color: red;"></span><br>
+                            </td>
                         </tr>
 
-                        <tr>
+                        <!-- <tr>
                             <td><label for='fname'>Faculty Name</label></td>
                             <td><input type='text' name='fname' id="fname"></td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td><label for='hall'>Select Hall</label></td>
                             <td>
-                                <select id="hall" name="hall" class="form-select">
+                            <select id='hall' name='hall' onblur="validateSelectHall()">
                                     <option value=''></option>
                                     <option value="UV">U.V Hall</option>
                                     <option value="RJ">Ramanujam Hall</option>
                                     <option value="PG">PG Seminar Hall</option>
                                     <option value="SJ">Silver Jubliee Hall</option>
                                 </select>
+                                <span id="hallError" style="color: red;"></span><br>
                             </td>
                         </tr>
                         <tr>
                             <td><label for='edate'>Event Date</label></td>
-                            <td><input type="date" name="edate" id="edate"></td>
+                            <td>
+                                <input type="date" id="edate" name="edate" onblur="validateEventDate()">
+                                <span id="edateError" style="color: red;"></span><br>
+                            </td>
                         </tr>
                         <tr>
                             <td><label for='stime'>From</label></td>
-                            <td><input type='time' name='stime' id="stime" required ></td>
+                            <td>
+                                <input type='time' id='stime' name='stime' onblur="validateStartTime()">
+                                <span id="stimeError" style="color: red;"></span><br>
+                            </td>
                         </tr>
                         <tr>
                             <td><label for='etime'>To</label></td>
-                            <td><input type='time' name='etime' id="etime" required></td>
+                            <td>
+                                <input type='time' id='etime' name='etime' onblur="validateEndTime()">
+                                <span id="etimeError" style="color: red;"></span><br>
+                            </td>
                         </tr>
                         <tr>
                             <td><input type='reset' name='reset' value='Reset'></td>
@@ -207,19 +228,8 @@ if (hourNumber < 9) {
 
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "eventmanagement";
 
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-else{ echo "";}
+include 'conn.php';
 
 if(isset($_POST['submit'])){
    
@@ -228,7 +238,7 @@ if(isset($_POST['submit'])){
     $ename = $_POST['ename'];
     $abt = $_POST['event'];
    $dep = $_POST['dep'];
-    $fname = $_POST['fname'];
+    $fname = $sname;
     $hall = $_POST['hall'];
     $edate = $_POST['edate'];
    $stime = $_POST['stime'];
@@ -325,7 +335,248 @@ $conn->close();
 
 }
 else{
-    echo "You are not Verified Staff";
+    echo "You are not Verified Staff<br>";
+    echo "Please login to view the details"."<a href='newlogin.php'>Click here </a>";
 }
 ?>
+
+<!-- <script>
+
+
+
+
+
+
+
+
+        function validateDepartment() {
+            
+            var department = document.getElementById('dep').value;
+            var depError = document.getElementById('depError');
+            if (department.trim() === '') {
+                depError.textContent = 'Please select a department.';
+                return false;
+            } else {
+                depError.textContent = '';
+                return true;
+            }
+        }
+
+        function validateEventType() {
+            var eventType = document.getElementById('etype').value;
+            var etypeError = document.getElementById('etypeError');
+            if (eventType.trim() === '') {
+                etypeError.textContent = 'Please enter an event type.';
+                return false;
+            } else {
+                etypeError.textContent = '';
+                return true;
+            }
+        }
+
+        function validateEventName() {
+            var eventName = document.getElementById('ename').value;
+            var enameError = document.getElementById('enameError');
+            if (eventName.trim() === '') {
+                enameError.textContent = 'Please enter an event name.';
+                return false;
+            } else {
+                enameError.textContent = '';
+                return true;
+            }
+        }
+
+        function validateEventDescription() {
+        var eventDescription = document.getElementById('event').value;
+        var eventError = document.getElementById('eventError');
+        if (eventDescription.trim() === '') {
+            eventError.textContent = 'Please provide information about the event.';
+            return false;
+        } else {
+            eventError.textContent = '';
+            return true;
+        }
+        }
+
+        function validateSelectHall() {
+        var selectedHall = document.getElementById('hall').value;
+        var hallError = document.getElementById('hallError');
+        if (selectedHall.trim() === '') {
+            hallError.textContent = 'Please select a hall.';
+            return false;
+        } else {
+            hallError.textContent = '';
+            return true;
+        }
+        }
+
+        function validateEventDate() {
+        var eventDate = document.getElementById('edate').value;
+        var edateError = document.getElementById('edateError');
+        if (eventDate.trim() === '') {
+            edateError.textContent = 'Please select an event date.';
+            return false;
+        } else {
+            edateError.textContent = '';
+            return true;
+        }
+        }
+
+        function validateStartTime() {
+        var startTime = document.getElementById('stime').value;
+        var stimeError = document.getElementById('stimeError');
+        if (startTime.trim() === '') {
+            stimeError.textContent = 'Please select a start time.';
+            return false;
+        } else {
+            stimeError.textContent = '';
+            return true;
+        }
+        }
+
+        function validateEndTime() {
+        var endTime = document.getElementById('etime').value;
+        var etimeError = document.getElementById('etimeError');
+        if (endTime.trim() === '') {
+            etimeError.textContent = 'Please select an end time.';
+            return false;
+        } else {
+            etimeError.textContent = '';
+            return true;
+        }
+        }
+
+        function validateForm() {
+            var isDepartmentValid = validateDepartment();
+            var isEventTypeValid = validateEventType();
+            var isEventNameValid = validateEventName();
+            var isEventDescription = validateEventDescription();
+            var isSelectHall = validateSelectHall();
+            var isEventDate = validateEventDate();
+            var isStartTime = validateStartTime();
+
+            // Add validations for other fields here
+
+            if (isDepartmentValid && isEventTypeValid && isEventNameValid && isEventDescription && isSelectHall && isEventDate
+            && isStartTime) {
+                return true; // Submit the form
+            } else {
+                return false; // Prevent form submission
+            }
+        }
+        function validateEventDate() {
+            var eventDateInput = document.getElementById('edate');
+            var eventDate = eventDateInput.value;
+            var edateError = document.getElementById('edateError');
+            var currentDate = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+
+            if (eventDate < currentDate) {
+                edateError.textContent = 'Please select a future date.';
+                eventDateInput.value = '';
+                return false;
+            } else {
+                edateError.textContent = '';
+                return true;
+            }
+        }
+
+        function validateForm() {
+            var isEventDateValid = validateEventDate();
+
+            // Add validations for other fields here
+
+            if (isEventDateValid) {
+                return true; // Submit the form
+            } else {
+                return false; // Prevent form submission
+            }
+        }
+    </script> -->
+
+
+
+    <script>
+    function validateForm() {
+        var department = document.getElementById('dep').value;
+        var eventType = document.getElementById('etype').value;
+        var eventName = document.getElementById('ename').value;
+        var eventDescription = document.getElementById('event').value;
+        var selectedHall = document.getElementById('hall').value;
+        var eventDate = document.getElementById('edate').value;
+        var startTime = document.getElementById('stime').value;
+        var endTime = document.getElementById('etime').value;
+
+        var depError = document.getElementById('depError');
+        var etypeError = document.getElementById('etypeError');
+        var enameError = document.getElementById('enameError');
+        var eventError = document.getElementById('eventError');
+        var hallError = document.getElementById('hallError');
+        var edateError = document.getElementById('edateError');
+        var stimeError = document.getElementById('stimeError');
+        var etimeError = document.getElementById('etimeError');
+
+        if (department.trim() === '') {
+            depError.textContent = 'Please select a department.';
+            return false;
+        } else {
+            depError.textContent = '';
+        }
+
+        if (eventType.trim() === '') {
+            etypeError.textContent = 'Please enter an event type.';
+            return false;
+        } else {
+            etypeError.textContent = '';
+        }
+
+        if (eventName.trim() === '') {
+            enameError.textContent = 'Please enter an event name.';
+            return false;
+        } else {
+            enameError.textContent = '';
+        }
+
+        if (eventDescription.trim() === '') {
+            eventError.textContent = 'Please provide information about the event.';
+            return false;
+        } else {
+            eventError.textContent = '';
+        }
+
+        if (selectedHall.trim() === '') {
+            hallError.textContent = 'Please select a hall.';
+            return false;
+        } else {
+            hallError.textContent = '';
+        }
+
+        if (eventDate.trim() === '') {
+            edateError.textContent = 'Please select an event date.';
+            return false;
+        } else {
+            edateError.textContent = '';
+        }
+
+        if (startTime.trim() === '') {
+            stimeError.textContent = 'Please select a start time.';
+            return false;
+        } else {
+            stimeError.textContent = '';
+        }
+
+        if (endTime.trim() === '') {
+            etimeError.textContent = 'Please select an end time.';
+            return false;
+        } else {
+            etimeError.textContent = '';
+        }
+
+        
+        alert("Booking Is Successful");
+        return true; // Allow form submission
+    }
+</script>
+
+
+
 

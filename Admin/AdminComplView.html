@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/a364e8076a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="AdminComplView.css"></link>
+
+</head>
+
+<body>
+        <h3 class="admin_name">Admin Name</h3>
+
+    <div class="content-container">
+        <div class="parent">
+            
+            <div class="child-container">
+                <input type="checkbox" id="check">
+                
+                <label class="button bars" for="check">
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+                <div class="side_bar">
+                    <div class="title">
+                        <div class="logo">
+                            <a href="http://www.kasc.ac.in/" class="logo-at" target="_self">
+                                <img src="https://www.naukrimessenger.com/wp-content/uploads/2021/08/kasc.jpg" alt="">
+                                <span class="">KASC</span>
+                            </a>
+                        </div>
+                        <label class="button cancel" for="check">
+                            <i class="fas fa-times"></i>
+                        </label>
+                    </div>
+                    <ul>
+                        <li><a href="http://localhost/fp/new%20index/landindex.php" target="_self">
+                                <i class="des fa-solid fa-house"></i>
+                                <span class="nav-items">HOME</span>
+                            </a></li>
+                        <li><a href="AdminEventView.html" target="_self">
+                                <i class="des fa-solid fa-calendar-check"></i>
+                                <span class="nav-items">BOOKINGS</span>
+                            </a></li>
+                        <li><a href="AdminComplView.html" target="_self">
+                                <i class="des fa-solid fa-clipboard-question"></i>
+                                <span class="nav-items">COMPLAINTS</span>
+                            </a></li>
+                        <li><a href="#" class="logout" target="_self">
+                                <i class="des fa-solid fa-arrow-right-from-bracket"></i>
+                                <span class="nav-items">LOGOUT</span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="event">
+            <div>
+                <h1 class="event_form_heading">Complaints Registered</h1>
+            </div>
+            
+            <div class="event-view">
+                <form method='post'>
+                    <table>
+                        <tr>
+                            <td><input type='text' name='hall' placeholder='Hall'></td>
+                            <td><input type='text' name='dep' placeholder='dep'></td>
+                            <td><input type='submit' name='submit'></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+            <div class="event_form">
+                <div>
+                    <table>
+                        <tr>
+                            <th>Faculty Name</th>
+                            <th>Caption</th>
+                            <th>Hall</th>
+                            <th>Details</th>
+                            
+                            <th colspan='3' class="tablehead">Actions</th>
+                        </tr>
+                        <tr class="td-value">
+                            <td>Banu</td>
+                            <td>Speaker issue</td>
+                            <td>U.V</td>
+                            <td style="text-align:left;">Seminar on Internet of Things conducted by BCA Department</td>
+
+                            
+                            <td><button class="edit"><a href="http://localhost/fp/Admin/c-view.php?id=20">View</a></button></td>
+                            <td><button class="delete"><a href="delete.php" target="_blank">Delete</a></button></td>
+                            <td><button class="verify"><a href="delete.php" target="_blank">Verify</a></button></td>
+                        </tr>
+                        <tr class="td-value">
+                            <td>Banu</td>
+                            <td>Speaker issue</td>
+                            <td>U.V</td>
+                            <td style="text-align:left;">Seminar on Internet of Things conducted by BCA Department</td>
+                            <td><button class="edit"><a href="http://localhost/fp/Admin/c-view.php?id=20">View</a></button></td>
+                            <td><button class="delete"><a href="delete.php" target="_blank">Delete</a></button></td>
+                            <td><button class="verify"><a href="delete.php" target="_blank">Verify</a></button></td>
+                        </tr>
+                        <tr class="td-value">
+                            <td>Banu</td>
+                            <td>Speaker issue</td>
+                            <td>U.V</td>
+                            <td style="text-align:left;">Seminar on Internet of Things conducted by BCA Department</td>
+                            <td><button class="edit"><a href="http://localhost/fp/Admin/c-view.php?id=20">View</a></button></td>
+                            <td><button class="delete"><a href="delete.php" target="_blank">Delete</a></button></td>
+                            <td><button class="verify"><a href="delete.php" target="_blank">Verify</a></button></td>
+                        </tr>
+                        <tr class="td-value">
+                            <td>Banu</td>
+                            <td>Speaker issue</td>
+                            <td>U.V</td>
+                            <td style="text-align:left;">Seminar on Internet of Things conducted by BCA Department</td>
+                            <td><button class="edit"><a href="http://localhost/fp/Admin/c-view.php?id=20">View</a></button></td>
+                            <td><button class="delete"><a href="delete.php" target="_blank">Delete</a></button></td>
+                            <td><button class="verify"><a href="delete.php" target="_blank">Verify</a></button></td>
+                        </tr>
+                        <tr class="td-value">
+                            <td>Banu</td>
+                            <td>Speaker issue</td>
+                            <td>U.V</td>
+                            <td style="text-align:left;">Seminar on Internet of Things conducted by BCA Department</td>
+                            <td><button class="edit"><a href="http://localhost/fp/Admin/c-view.php?id=20">View</a></button></td>
+                            <td><button class="delete"><a href="delete.php" target="_blank">Delete</a></button></td>
+                            <td><button class="verify"><a href="delete.php" target="_blank">Verify</a></button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</body>
+
+</html>

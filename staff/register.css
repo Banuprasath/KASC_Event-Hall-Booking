@@ -1,69 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('https://w.wallhaven.cc/full/85/wallhaven-8586my.png') center/cover no-repeat fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+    /*body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url('https://i.ibb.co/qCkd9jS/img1.jpg') center/cover no-repeat fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
 
-form {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    form {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #fff;
-}
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #fff;
+    }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
 
-button {
-    background-color: transparent;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    button {
+        background-color: transparent;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-button.reset-button {
-    background-color: transparent;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
+    button.reset-button {
+        background-color: transparent;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
 
-button:hover {
-    background-color: aqua;
-    color: #000;
-}
+    button:hover {
+        background-color: aqua;
+        color: #000;
+    }
 
-.form-cont {
-    margin-top: 35px;
-}
+    .form-cont {
+        margin-top: 35px;
+    }
 
-.heading {
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-}
+    .heading {
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    style{
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+    style option{
+        color: #fff;
+        background-color: #0004;
+    }*/
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url('https://i.ibb.co/qCkd9jS/img1.jpg') center/cover no-repeat fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .form-cont {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .heading {
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #fff;
+    }
+    
+    input, select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.2);
+        color: #0007;
+        font-weight: bold;
+    }
+    
+    select {
+        background: rgba(255, 255, 255, 0.2);
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 30px; /* Add space for the arrow */
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+    }
+    select option{
+        color:#fff;
+        background-color:#0007;
+    }
+    button {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    button.reset-button {
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        color: #fff;
+        margin-right: 10px;
+    }
+    
+    button:hover {
+        background-color: #05eff3;
+        color: #000;;
+    }

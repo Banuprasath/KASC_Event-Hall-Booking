@@ -48,7 +48,7 @@ $folderPath = "../complaints/";
 
     if ($conn->query($sqlInsert) === TRUE) {
         echo "Record delete successfully<br>";
-//        header('Location: admin.php');
+        header('Location: complaint.php');
             } else {
                 echo "Error inserting record: " . $conn->error . "<br>";
             }

@@ -7,5 +7,5 @@ menuIcon.addEventListener('click', () => {
 });
 
 function openNewWindow(url) {
-    window.open(url, '_blank');
+    window.open(url, '_self');
 }

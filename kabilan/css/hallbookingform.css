@@ -12,12 +12,17 @@
 
 body {
     height: 100%;
+    background-image: url('https://i.ibb.co/qCkd9jS/img1.jpg');
     background-size: cover;
     background-position: center;
+    overflow: auto;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("https://w.wallhaven.cc/full/mp/wallhaven-mprkjk.jpg") no-repeat no-repeat fixed;
+    background-attachment: fixed;
+    /* background: url("test.jpeg") no-repeat no-repeat fixed; */
 }
 
 .header {
